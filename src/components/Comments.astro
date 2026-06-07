@@ -33,16 +33,21 @@
     s.async = true;
     container.appendChild(s);
 
-    // 站台切換深淺色時，同步 giscus iframe 主題
-    new MutationObserver(() => {
-      const iframe = document.querySelector("iframe.giscus-frame");
-      iframe?.contentWindow?.postMessage(
-        { giscus: { setConfig: { theme: currentTheme() } } },
-        "https://giscus.app"
-      );
-    }).observe(document.firstElementChild, {
-      attributes: true,
-      attributeFilter: ["data-theme"],
-    });
+    // 站台切換深淺色時，同步 giscus iframe 主題。
+    // observer 觀察的 <html> 跨 View Transitions 持久存在，
+    // 用 window 單例避免每次導覽都疊加一個 observer。
+    if (!window.__giscusThemeObserver) {
+      window.__giscusThemeObserver = new MutationObserver(() => {
+        const iframe = document.querySelector("iframe.giscus-frame");
+        iframe?.contentWindow?.postMessage(
+          { giscus: { setConfig: { theme: currentTheme() } } },
+          "https://giscus.app"
+        );
+      });
+      window.__giscusThemeObserver.observe(document.firstElementChild, {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+      });
+    }
   })();
 </script>
