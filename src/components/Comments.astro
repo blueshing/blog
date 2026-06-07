@@ -1,0 +1,48 @@
+---
+// giscus 留言區（GitHub Discussions）— 動態載入以對齊站台深淺色主題
+---
+
+<section id="giscus-comments" class="mx-auto mt-8 w-full max-w-app">
+  <div id="giscus-container"></div>
+</section>
+
+<script is:inline data-astro-rerun>
+  (function () {
+    const currentTheme = () =>
+      document.firstElementChild?.getAttribute("data-theme") === "dark"
+        ? "dark"
+        : "light";
+
+    const container = document.getElementById("giscus-container");
+    if (!container || container.childElementCount > 0) return;
+
+    const s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    s.setAttribute("data-repo", "blueshing/blog");
+    s.setAttribute("data-repo-id", "R_kgDOSzYbnA");
+    s.setAttribute("data-category", "Announcements");
+    s.setAttribute("data-category-id", "DIC_kwDOSzYbnM4C-raN");
+    s.setAttribute("data-mapping", "pathname");
+    s.setAttribute("data-strict", "0");
+    s.setAttribute("data-reactions-enabled", "1");
+    s.setAttribute("data-emit-metadata", "0");
+    s.setAttribute("data-input-position", "bottom");
+    s.setAttribute("data-theme", currentTheme());
+    s.setAttribute("data-lang", "zh-TW");
+    s.crossOrigin = "anonymous";
+    s.async = true;
+    container.appendChild(s);
+
+    // 站台切換深淺色時，同步 giscus iframe 主題
+    new MutationObserver(() => {
+      const iframe = document.querySelector("iframe.giscus-frame");
+      iframe?.contentWindow?.postMessage(
+        { giscus: { setConfig: { theme: currentTheme() } } },
+        "https://giscus.app"
+      );
+    }).observe(document.firstElementChild, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+  })();
+</script>
