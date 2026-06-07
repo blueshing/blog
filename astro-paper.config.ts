@@ -2,14 +2,13 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://astro-paper.pages.dev/",
-    title: "AstroPaper",
-    description: "A minimal, responsive and SEO-friendly Astro blog theme.",
-    author: "Sat Naing",
-    profile: "https://satna.ing",
+    url: "https://kim-blog.pages.dev", // Task 7 部署後若實際網址不同，回來更新
+    title: "Kim's Blog",
+    description: "技術與生活的混合筆記 — FinOps、雲端、AI 與日常",
+    author: "Kim Huang",
     ogImage: "default-og.jpg",
-    lang: "en",
-    timezone: "Asia/Bangkok",
+    lang: "zh-TW",
+    timezone: "Asia/Taipei",
     dir: "ltr",
   },
   posts: {
@@ -22,24 +21,16 @@ export default defineAstroPaperConfig({
     dynamicOgImage: true,
     showArchives: true,
     showBackButton: true,
-    editPost: {
-      enabled: true,
-      url: "https://github.com/satnaing/astro-paper/edit/main/",
-    },
+    editPost: { enabled: false },
     search: "pagefind",
   },
   socials: [
-    { name: "github",   url: "https://github.com/satnaing/astro-paper" },
-    { name: "x",        url: "https://x.com/username" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/username/" },
-    { name: "mail",     url: "mailto:yourmail@gmail.com" },
+    { name: "github", url: "https://github.com/blueshing" },
+    { name: "mail", url: "mailto:blueshing@gmail.com" },
   ],
   shareLinks: [
-    { name: "whatsapp", url: "https://wa.me/?text=" },
     { name: "facebook", url: "https://www.facebook.com/sharer.php?u=" },
-    { name: "x",        url: "https://x.com/intent/post?url=" },
-    { name: "telegram", url: "https://t.me/share/url?url=" },
-    { name: "pinterest", url: "https://pinterest.com/pin/create/button/?url=" },
-    { name: "mail",     url: "mailto:?subject=See%20this%20post&body=" },
+    { name: "x", url: "https://x.com/intent/post?url=" },
+    { name: "mail", url: "mailto:?subject=分享文章&body=" },
   ],
 });
