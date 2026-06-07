@@ -2,7 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://kim-blog.pages.dev", // Task 7 部署後若實際網址不同，回來更新
+    url: "https://blog-cxw.pages.dev",
     title: "Kim's Blog",
     description: "技術與生活的混合筆記 — FinOps、雲端、AI 與日常",
     author: "Kim Huang",
