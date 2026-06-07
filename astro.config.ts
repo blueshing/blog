@@ -59,14 +59,15 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   fonts: [
+    // 僅供 build 時 satori 產生 OG 圖使用（含繁中字符），網頁本身用系統字型堆疊
     {
-      name: "Google Sans Code",
-      cssVariable: "--font-google-sans-code",
+      name: "Noto Sans TC",
+      cssVariable: "--font-noto-sans-tc",
       provider: fontProviders.google(),
-      fallbacks: ["monospace"],
-      weights: [300, 400, 500, 600, 700],
-      styles: ["normal", "italic"],
-      formats: ["woff", "ttf"],
+      fallbacks: ["sans-serif"],
+      weights: [400, 700],
+      styles: ["normal"],
+      formats: ["ttf"],
     },
   ],
   env: {
