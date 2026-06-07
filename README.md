@@ -20,6 +20,6 @@ npm run build   # astro check + build + pagefind 索引
 
 ## 部署
 
-push 到 `main` → Cloudflare Pages 自動建置（build command `npm run build`、輸出 `dist`、`NODE_VERSION=22.12.0`）。
+push 到 `main` → GitHub Actions（`.github/workflows/deploy.yml`）自動建置並發佈到 GitHub Pages：**https://blueshing.github.io**
 
 設計文件與實作計畫見 `docs/superpowers/`。

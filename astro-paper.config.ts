@@ -2,7 +2,7 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://blog-cxw.pages.dev",
+    url: "https://blueshing.github.io",
     title: "Kim's Blog",
     description: "技術與生活的混合筆記 — FinOps、雲端、AI 與日常",
     author: "Kim Huang",
