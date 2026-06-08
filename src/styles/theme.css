@@ -12,25 +12,25 @@
     "Microsoft JhengHei", "Segoe UI", Roboto, sans-serif;
 }
 
-/* Light theme values */
+/* Light theme values — 晝藍 */
 :root,
 [data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
+  --background: #f6f9fd;
+  --foreground: #16243f;
+  --accent: #9a6a1b;
   --accent-foreground: #ffffff;
-  --muted: #e6e6e6;
-  --muted-foreground: #6b7280;
-  --border: #ece9e9;
+  --muted: #e4ecf7;
+  --muted-foreground: #566584;
+  --border: #d3deef;
 }
 
-/* Dark theme values */
+/* Dark theme values — 午夜星空 */
 [data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --accent-foreground: #ffffff;
-  --muted: #343f60;
-  --muted-foreground: #afb9ca;
-  --border: #ab4b08;
+  --background: #0d1b2e;
+  --foreground: #e8eef9;
+  --accent: #f5c518;
+  --accent-foreground: #0d1b2e;
+  --muted: #1a2c47;
+  --muted-foreground: #9fb4d4;
+  --border: #2a3f63;
 }
