@@ -29,6 +29,7 @@ export default {
   },
   home: {
     socialLinks: "社群連結",
+    heroTagline: "在星空下，喝杯咖啡寫點東西",
     featured: "精選",
     recentPosts: "最新文章",
     allPosts: "所有文章",

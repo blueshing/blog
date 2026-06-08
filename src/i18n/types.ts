@@ -27,6 +27,7 @@ export interface UIStrings {
   };
   home: {
     socialLinks: string;
+    heroTagline: string;
     featured: string;
     recentPosts: string;
     allPosts: string;

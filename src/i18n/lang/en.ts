@@ -29,6 +29,7 @@ export default {
   },
   home: {
     socialLinks: "Social Links",
+    heroTagline: "Coffee, a few words, under a sky full of stars",
     featured: "Featured",
     recentPosts: "Recent Posts",
     allPosts: "All Posts",
